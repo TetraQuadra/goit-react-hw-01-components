@@ -17,7 +17,7 @@ const parseFriends = friends => {
           height: '24px',
           width: '24px',
           borderRadius: '50%',
-          backgroundColor: isOnline ? 'green' : 'tomato',
+          backgroundColor: isOnline ? 'lightgreen' : 'pink',
         }}
       >
         {isOnline}
