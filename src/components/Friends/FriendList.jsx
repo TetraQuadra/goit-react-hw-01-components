@@ -17,8 +17,8 @@ FriendList.propTypes = {
 function FriendList(friends) {
   return (
     <div className={styles.profileCard}>
-      <h2 className="title">Friends</h2>
-      <ul className="friend-list">{parseFriends(friends)}</ul>
+      <h2>Friends</h2>
+      <ul>{parseFriends(friends)}</ul>
     </div>
   );
 }

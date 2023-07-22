@@ -2,7 +2,6 @@ const parseFriends = friends => {
   return friends.friends.map(({ avatar, name, isOnline, id }) => (
     <li
       key={id}
-      className="item"
       style={{
         display: 'flex',
         gap: 12,
@@ -12,7 +11,6 @@ const parseFriends = friends => {
       }}
     >
       <span
-        className="status"
         style={{
           height: '24px',
           width: '24px',
@@ -22,8 +20,8 @@ const parseFriends = friends => {
       >
         {isOnline}
       </span>
-      <img className="avatar1" src={avatar} alt={name} width="48px" />
-      <p className="name">{name}</p>
+      <img src={avatar} alt={name} width="48px" />
+      <p>{name}</p>
     </li>
   ));
 };
