@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './Friends.module.css';
+import styles from './FriendList.module.css';
 import PropTypes from 'prop-types';
-import generateStats from './generateStats';
+import parseFriends from './parseFriends';
 
-FriendsList.propTypes = {
+FriendList.propTypes = {
   friends: PropTypes.arrayOf(
     PropTypes.shape({
       avatar: PropTypes.string,
@@ -14,7 +14,7 @@ FriendsList.propTypes = {
   ),
 };
 
-function Friends(friends) {
+function FriendList(friends) {
   return (
     <div className={styles.profileCard}>
       <h2 className="title">Friends</h2>
@@ -23,4 +23,4 @@ function Friends(friends) {
   );
 }
 
-export default Friends;
+export default FriendList;
