@@ -1,9 +1,8 @@
 import React from 'react';
-import styles from './Profile.module.css';
+import styles from './Statistics.module.css';
 import PropTypes from 'prop-types';
-import generateStatCards from './generateStatCards';
 
-Profile.propTypes = {
+Statistics.propTypes = {
   username: PropTypes.string,
   tag: PropTypes.string,
   location: PropTypes.string,
@@ -15,7 +14,7 @@ Profile.propTypes = {
   }),
 };
 
-function Profile({ username, tag, location, avatar, stats }) {
+function Statistics({ username, tag, location, avatar, stats }) {
   return (
     <div className={styles.profileCard}>
       <div className={styles.profileInfo}>
@@ -29,4 +28,4 @@ function Profile({ username, tag, location, avatar, stats }) {
   );
 }
 
-export default Profile;
+export default Statistics;
