@@ -8,7 +8,7 @@ const parseFriends = friends => {
         gap: 12,
         alignItems: 'center',
         padding: 8,
-        border: '1px solid rgb(153, 153, 153)',
+        border: '1px solid gray',
       }}
     >
       <span
