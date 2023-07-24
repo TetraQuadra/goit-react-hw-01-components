@@ -1,8 +1,7 @@
 import React from 'react';
-import styles from './Profile.module.css';
 import PropTypes from 'prop-types';
 
-
+import styles from './Profile.module.css';
 function Profile({ username, tag, location, avatar, stats }) {
   return (
     <div className={styles.profileCard}>
@@ -35,7 +34,5 @@ Profile.propTypes = {
     likes: PropTypes.number,
   }),
 };
-
-
 
 export default Profile;
