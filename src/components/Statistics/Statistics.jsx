@@ -1,7 +1,23 @@
 import React from 'react';
-import styles from './Statistics.module.css';
 import PropTypes from 'prop-types';
-import generateStats from './generateStats';
+
+import styles from './Statistics.module.css';
+
+function Statistics({ title, stats }) {
+  return (
+    <div className={styles.profileCard}>
+      {title && <h2>{title}</h2>}
+      <ul className={styles.profileStats}>
+        {stats.map(({ id, label, percentage }) => (
+          <li key={id} className={styles.statCard}>
+            <span className={styles.label}>{label}</span>
+            <span className={styles.percentage}>{percentage}%</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 Statistics.propTypes = {
   title: PropTypes.string,
@@ -13,15 +29,5 @@ Statistics.propTypes = {
     })
   ),
 };
-
-function Statistics({ title, stats }) {
-  return (
-    <div className={styles.profileCard}>
-      {title && <h2>{title}</h2>}
-      <ul className={styles.profileStats}>{generateStats(stats)}</ul>
-    </div>
-  );
-}
-//
 
 export default Statistics;
