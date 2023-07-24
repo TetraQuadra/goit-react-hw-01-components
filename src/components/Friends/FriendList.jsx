@@ -9,7 +9,9 @@ function FriendList(friends) {
     <div className={styles.profileCard}>
       <h2>Friends</h2>
       <ul>
-        <FriendListItem friends={friends} />
+        {friends.friends.map(friend => (
+          <FriendListItem key={friend.id} friend={friend} />
+        ))}
       </ul>
     </div>
   );
