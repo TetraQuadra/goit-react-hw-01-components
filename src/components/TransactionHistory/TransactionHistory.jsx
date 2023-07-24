@@ -1,18 +1,7 @@
+import React from 'react';
 import PropTypes from 'prop-types';
-import parseTransactions from './parseTransactions';
 
-TransactionHistory.propTypes = {
-  transactions: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      type: PropTypes.string,
-      amount: PropTypes.string,
-      currency: PropTypes.string,
-    })
-  ),
-};
-
-function TransactionHistory(transactions) {
+function TransactionHistory({ transactions }) {
   return (
     <table
       style={{
@@ -32,9 +21,34 @@ function TransactionHistory(transactions) {
           <th>Currency</th>
         </tr>
       </thead>
-      <tbody>{parseTransactions(transactions)}</tbody>
+      <tbody>
+        {transactions.map(({ id, type, amount, currency }) => (
+          <tr
+            key={id}
+            style={{
+              height: 25,
+              borderBottom: '1px solid gray',
+            }}
+          >
+            <td>{type}</td>
+            <td>{amount}</td>
+            <td>{currency}</td>
+          </tr>
+        ))}
+      </tbody>
     </table>
   );
 }
+
+TransactionHistory.propTypes = {
+  transactions: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      type: PropTypes.string,
+      amount: PropTypes.string,
+      currency: PropTypes.string,
+    })
+  ).isRequired,
+};
 
 export default TransactionHistory;
