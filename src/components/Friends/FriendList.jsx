@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './FriendList.module.css';
 import PropTypes from 'prop-types';
-import parseFriends from './parseFriends';
+import FriendListItem from 'components/FriendListItem/FriendListItem';
 
 FriendList.propTypes = {
   friends: PropTypes.arrayOf(
@@ -18,7 +18,9 @@ function FriendList(friends) {
   return (
     <div className={styles.profileCard}>
       <h2>Friends</h2>
-      <ul>{parseFriends(friends)}</ul>
+      <ul>
+        <FriendListItem friends={friends} />
+      </ul>
     </div>
   );
 }
